@@ -10,7 +10,7 @@ def biowetter():
     ndrHtml = ndrFile.read()
     ndrFile.close()
 
-    soup = BeautifulSoup(ndrHtml, "lxml")
+    soup = BeautifulSoup(ndrHtml, "html5lib")
     completeText = soup.find("div", {"class": "modulepadding copytext"})
     speech_text = completeText.text
 
