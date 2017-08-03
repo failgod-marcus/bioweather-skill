@@ -16,11 +16,13 @@ def biowetter():
     soup = BeautifulSoup(ndrHtml, "html5lib")
     completeText = soup.find("div", {"class": "modulepadding copytext"})
     speech_text = completeText.text
+    speech_text = speech_text.replace('Biowetter', '')
+    speech_text = speech_text.replace('Das Wetter zu jeder vollen Stunde auf NDR 2', '')
 
     responseJSON = {
             "uid" : str(uuid.uuid1()),
             #"uid" : "blafasel",
-            "updateDate" : "2017-08-03T00:00:00.0Z", #str(datetime.datetime.now().isoformat()),
+            "updateDate" : "2017-08-03T20:43:45.101517", #str(datetime.datetime.now().isoformat()),
             "titleText":"Biowetter",
             "mainText": speech_text
         }
