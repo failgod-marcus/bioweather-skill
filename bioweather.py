@@ -19,7 +19,7 @@ def biowetter():
             "uid": "urn:uuid:1335c695-cfb8-4ebb-abbd-80da344efa6b",
             "updateDate": "2016-05-23T00:00:00.0Z",
             "titleText":"Biowetter",
-            "mainText": "Biowetter hier"
+            "mainText": "Biowetter wäre hier"
         }
 
     js = json.dumps(responseJSON)
