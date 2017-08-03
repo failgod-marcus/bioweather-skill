@@ -22,7 +22,7 @@ def biowetter():
     responseJSON = {
             "uid" : str(uuid.uuid1()),
             #"uid" : "blafasel",
-            "updateDate" : "2017-08-03T20:43:45.101517", #str(datetime.datetime.now().isoformat()),
+            "updateDate" : "2017-08-03T20:43:45.0Z", #str(datetime.datetime.now().isoformat()),
             "titleText":"Biowetter",
             "mainText": speech_text
         }
