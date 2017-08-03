@@ -23,7 +23,7 @@ def biowetter():
         }
 
     js = json.dumps(responseJSON)
-    resp = Response(js, status=200, mimetype='application/json')
+    resp = Response(js, status=200, mimetype='application/json', charset="utf-8")
 
     return resp
 
