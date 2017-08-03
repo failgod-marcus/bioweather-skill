@@ -16,8 +16,10 @@ def biowetter():
     speech_text = completeText.text
 
     responseJSON = {
+            "uid": "urn:uuid:1335c695-cfb8-4ebb-abbd-80da344efa6b",
+            "updateDate": "2016-05-23T00:00:00.0Z",
             "titleText":"Biowetter",
-            "mainText": "Biowetter wäre hier"
+            "mainText": "Biowetter hier"
         }
 
     js = json.dumps(responseJSON)
