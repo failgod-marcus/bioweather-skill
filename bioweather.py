@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, Response
 from bs4 import BeautifulSoup
 import urllib
 
@@ -20,7 +20,9 @@ def biowetter():
             "mainText": speech_text
         }
 
-    return jsonify(responseJSON)
+    js = json.dumps(responseJSON)
+    response = app.response_class(response=js, status=200, mimetype='application/json')
+    return response
 
 if __name__ == '__main__':
     app.run()
