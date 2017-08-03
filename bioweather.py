@@ -1,7 +1,6 @@
-from flask import Flask, Response
+from flask import Flask, jsonify
 from bs4 import BeautifulSoup
 import urllib
-import json
 
 app = Flask(__name__)
 
@@ -16,16 +15,12 @@ def biowetter():
     speech_text = completeText.text
 
     responseJSON = {
-            "uid": "urn:uuid:1335c695-cfb8-4ebb-abbd-80da344efa6b",
-            "updateDate": "2016-05-23T00:00:00.0Z",
+            "uid" : "testblafasel",
             "titleText":"Biowetter",
-            "mainText": "Biowetter wäre hier"
+            "mainText": speech_text
         }
 
-    js = json.dumps(responseJSON)
-    resp = Response(js, status=200, mimetype='application/json', charset="utf-8")
-
-    return resp
+    return jsonify(responseJSON)
 
 if __name__ == '__main__':
     app.run()
