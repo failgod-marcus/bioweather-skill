@@ -14,14 +14,12 @@ def biowetter():
     completeText = soup.find("div", {"class": "modulepadding copytext"})
     speech_text = completeText.text
 
-    responseJSON = [
-        {
+    responseJSON = {
             'titleText':'Biowetter',
             'mainText': speech_text
         }
-    ]
 
-    return jsonify('biowetter', responseJSON)
+    return jsonify(responseJSON)
 
 if __name__ == '__main__':
     app.run()
