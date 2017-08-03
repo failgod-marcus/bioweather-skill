@@ -2,4 +2,4 @@ Flask
 gunicorn
 bs4
 html5lib
-flask
+json
