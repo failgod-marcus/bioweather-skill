@@ -17,7 +17,7 @@ def biowetter():
 
     responseJSON = {
             "titleText":"Biowetter",
-            "mainText": speech_text
+            "mainText": "Biowetter wäre hier"
         }
 
     js = json.dumps(responseJSON)
