@@ -1,1 +1,1 @@
-web: gunicorn biowetter:app --log-file=-
+web: gunicorn bioweather:app --log-file=-
