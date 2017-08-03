@@ -18,8 +18,9 @@ def biowetter():
     speech_text = completeText.text
 
     responseJSON = {
-            "uid" : str(uuid.uuid1(node="hermes")),
-            #"updateDate" : str(datetime.datetime.now()),
+            "uid" : str(uuid.uuid1()),
+            #"uid" : "blafasel",
+            "updateDate" : "2017-08-3T00:00:00.0Z", #str(datetime.datetime.now().isoformat()),
             "titleText":"Biowetter",
             "mainText": speech_text
         }
