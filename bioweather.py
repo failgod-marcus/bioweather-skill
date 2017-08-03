@@ -2,6 +2,8 @@ from flask import Flask, Response
 from bs4 import BeautifulSoup
 import urllib
 import json
+import uuid
+import datetime
 
 app = Flask(__name__)
 
@@ -16,7 +18,8 @@ def biowetter():
     speech_text = completeText.text
 
     responseJSON = {
-            "uid" : "testblafasel",
+            "uid" : str(uuid.uuid1()),
+            "timestamp" : str(datetime.datetime.now()),
             "titleText":"Biowetter",
             "mainText": speech_text
         }
