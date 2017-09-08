@@ -4,6 +4,7 @@ import urllib
 import json
 import uuid
 import datetime
+import re
 
 app = Flask(__name__)
 
@@ -13,11 +14,17 @@ def biowetter():
     ndrHtml = ndrFile.read()
     ndrFile.close()
 
-    soup = BeautifulSoup(ndrHtml, "html5lib")
+    soup = BeautifulSoup(ndrHtml, "html.parser")
     completeText = soup.find("div", {"class": "modulepadding copytext"})
     speech_text = completeText.text
     speech_text = speech_text.replace('Biowetter', '')
     speech_text = speech_text.replace('Das Wetter zu jeder vollen Stunde auf NDR 2', '')
+
+    # Add whitespace between to sentences
+    speech_text = re.sub(r'([A-z])(\.)([A-z])', r'\1\2 \3', speech_text)
+
+    #remove newlines and add period
+    speech_text = re.sub(r'\n+', '. ', speech_text).rstrip()
 
     responseJSON = {
             "uid" : str(uuid.uuid1()),
