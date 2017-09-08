@@ -19,12 +19,12 @@ def biowetter():
     speech_text = completeText.text
     speech_text = speech_text.replace('Biowetter', '')
     speech_text = speech_text.replace('Das Wetter zu jeder vollen Stunde auf NDR 2', '')
-    speech_text = speech_text.lstrip()
+    speech_text = speech_text.lstrip().rstrip()
     # Add whitespace between to sentences
     speech_text = re.sub(r'([A-z])(\.)([A-z])', r'\1\2 \3', speech_text)
 
     #remove newlines and add period
-    speech_text = re.sub(r'\n+', '. ', speech_text).rstrip()
+    speech_text = re.sub(r'\n+', '. ', speech_text)
 
     responseJSON = {
             "uid" : str(uuid.uuid1()),
