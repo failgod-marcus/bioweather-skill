@@ -8,7 +8,7 @@ import re
 
 app = Flask(__name__)
 
-@app.route('/biowetter/api/v1.0/biowetter')
+@app.route('/api/v1.0/biowetter')
 def biowetter():
     ndrFile = urllib.request.urlopen("https://www.ndr.de/nachrichten/wetter/biowetter101.html")
     ndrHtml = ndrFile.read()
